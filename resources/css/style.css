@@ -1,0 +1,79 @@
+/* Variabili */
+
+:root{
+    --orange: #F5A623;
+    --lb: #2D9CDB;
+    --bg: #F2F2F2;
+    --text: #333333;
+    --accent: #FFC107;
+}
+
+.text-c{
+    color: var(--text);
+}
+
+.bg-c{
+    background-color: var(--bg);
+}
+
+.bg-o{
+    background-color: var(--lb);
+}
+
+.bg.lb{
+    background-color: var(--lb);
+}
+
+.bg-custom{
+    background-image: url(./../img/PrestoBg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .bg-custom {
+        background-position: top center;
+        background-size: cover;
+    }
+}
+
+/* Smartphone */
+@media (max-width: 768px) {
+    .bg-custom {
+        background-position: top center;
+        background-size: cover;
+        height: 60vh;
+    }
+}
+
+/* Footer */
+
+.footer-custom{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.fbi-custom{
+    background-color: #3b5897;
+}
+
+.insta-i-custom{
+    background-color: #ac2bac;
+}
+
+.fbi-custom:hover{
+    background-color: #3b5897;
+}
+
+.insta-i-custom:hover{
+    background-color: #ac2bac;
+}
+
+/* Form Login */
+
+.height-custom{
+    min-height: 60vh;
+}
