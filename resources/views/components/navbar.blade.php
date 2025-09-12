@@ -9,32 +9,49 @@
                 <li class="nav-item">
                     <a class="nav-link text-c" aria-current="page" href="{{route('homepage')}}">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-c" aria-current="page" href="{{route('article.index')}}">Tutti gli articoli</a>
+                </li>
+                <li class="nav-item dropdwon">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorie
+                    </a>
+                    <ul class="dropdown-menu">
+                        @foreach ($categories as $category)
+                        <li><a href="{{route('byCategory', ['category' => $category])}}" class="dropdown-item text-capitalize">{{ $category->name }}</a>
+                        </li>
+                        @if (!$loop->last)
+                        <hr class="dropdown-divider">
+                        @endif
+                        @endforeach
+                    </ul>
+                </li>
                 @auth
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-c" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Ciao, {{Auth::user()->name}}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
+                        <li><a class="dropdown-item text-c" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
                         <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form>
-                        <li><a class=" dropdown-item" href="{{route('create.article')}}">Crea</a></li>
+                        <li><a class=" dropdown-item text-c" href="{{route('create.article')}}">Crea</a></li>
                     </ul>
                 </li>
                 @else
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-c" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Ciao!
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
+                        <li><a class="dropdown-item text-c" href="{{route('login')}}">Accedi</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
+                        <li><a class="dropdown-item text-c" href="{{route('register')}}">Registrati</a></li>
                     </ul>
                 </li>
                 @endauth
             </ul>
         </div>
-    </div> 
+    </div>
 </nav>

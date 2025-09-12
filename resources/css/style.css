@@ -77,3 +77,9 @@
 .height-custom{
     min-height: 60vh;
 }
+
+/* Card omponent */
+
+.card-w{
+    width: 18rem;
+}
