@@ -14,10 +14,10 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Ciao, {{Auth::user()->name}}
                     </a>
-                    <li><a class="dropdown-item" href="{{route('create.article')}}"></a>Crea</li>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
                         <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form>
+                        <li><a class=" dropdown-item" href="{{route('create.article')}}">Crea</a></li>
                     </ul>
                 </li>
                 @else

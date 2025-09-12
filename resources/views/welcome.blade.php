@@ -5,7 +5,7 @@
                 <h1 class="display-4 fw-bolder">Presto.it</h1>
                 <div>
                     @auth
-                    <a href="{{route('create.article')}}" class="btn btn-dark"></a>
+                    <a href="{{route('create.article')}}" class="btn btn-dark">Pubblica un articolo</a>
                     @endauth
                 </div>
             </div>
