@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid pt-5">
         <div class="row">
-            <div class="col-3">
+            <div class="col-5">
                 <div class="rounded shadow bg-body-secondary">
                     <h1 class="display-5 text-center pb-2">
                         Revisor dashboard
@@ -9,6 +9,13 @@
                 </div>
             </div>
         </div>
+        @if(session()->has('message'))
+        <div class="row justify-content-center">
+            <div class="col-5 alert alert-success text-center shadow rounded">
+                {{session('message')}}
+            </div>
+        </div>
+        @endif
         @if ($article_to_check)
         <div class="row justify-content-center pt-5">
             <div class="col-md-8">
@@ -29,12 +36,14 @@
                     <p class="h6">{{$article_to_check->description}}</p>
                 </div>
                 <div class="d-flex pb-4 justify-content-around">
-                    <form action="" method="POST">
+                    <form action="{{route('reject', ['article' => $article_to_check])}}" method="POST">
                         @csrf
+                        @method('PATCH')
                         <button class="btn btn-danger py-2 px-5 fw-bold">Rifiuta</button>
                     </form>
-                    <form action="" method="POST">
+                    <form action="{{route('accept', ['article' => $article_to_check])}}" method="POST">
                         @csrf
+                        @method('PATCH')
                         <button class="btn btn-success py-2 px-5 fw-bold">Accetta</button>
                     </form>
                 </div>
