@@ -18,4 +18,10 @@ class RevisorController extends Controller
         $article->setAccepted(true);
         return redirect()->back()->with('message', "Hai accettato l'articolo $article->title");
     }
+
+    public function reject(Article $article)
+    {
+        $article->setAccepted(false);
+        return redirect()->back()->with('message', "Hai rifiutato l'articolo $article->title");
+    }
 }
