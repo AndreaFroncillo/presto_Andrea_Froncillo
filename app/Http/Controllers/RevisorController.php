@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
+use App\Mail\BecomeRevisor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
@@ -23,5 +28,32 @@ class RevisorController extends Controller
     {
         $article->setAccepted(false);
         return redirect()->back()->with('message', "Hai rifiutato l'articolo $article->title");
+    }
+
+    public function undo()
+    {
+        $lastArticle = Article::whereNotNull('is_accepted')
+            ->orderBy('updated_at', 'desc')
+            ->first();
+
+        if ($lastArticle) {
+            $lastArticle->resetAccepted();
+            return redirect()->back()->with('message', 'Ultima operazione annullata con successo.');
+        }
+
+        return redirect()->back()->with('error', 'Nessuna operazione da annullare.');
+    }
+
+
+    public function becomeRevisor()
+    {
+        Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
+        return redirect()->route('homepage')->with('message', 'Complimenti, Hai richiesto di diventare revisor');
+    }
+
+    public function makeRevisor(User $user)
+    {
+        Artisan::call('app:make-user-revisor', ['email' => $user->email]);
+        return redirect()->back();
     }
 }

@@ -11,7 +11,11 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'description', 'price', 'category_id', 'user_id'
+        'title',
+        'description',
+        'price',
+        'category_id',
+        'user_id'
     ];
 
     public function user(): BelongsTo
@@ -30,6 +34,13 @@ class Article extends Model
         $this->save();
         return true;
     }
+
+    public function resetAccepted()
+    {
+        $this->is_accepted = null;
+        $this->save();
+    }
+
 
     public static function toBeRevisedCount()
     {
