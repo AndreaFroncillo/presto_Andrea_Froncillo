@@ -36,10 +36,10 @@
   </div>
   <!-- Grid container -->
   <div class="col-md-5 offset-md-1 mb-3 text-center">
-    <h5>Vuoi diventare revisore?</h5>
-    <p>Cliccando il bottone sottostante farai richiesta al nostro admin</p>
+    <h5>{{ __('ui.become_revisor_title') }}</h5>
+    <p>{{ __('ui.become_revisor_text') }}</p>
 
-    <a href="{{route('become.revisor')}}" class="btn btn-success">diventa revisore</a>
+    <a href="{{route('become.revisor')}}" class="btn btn-success">{{ __('ui.become_revisor_button') }}</a>
   </div>
   <!-- Copyright -->
   <div class="text-center p-3 footer-custom">

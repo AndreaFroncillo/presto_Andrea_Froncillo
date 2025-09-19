@@ -11,15 +11,15 @@
             <form method="POST" action="{{route('login')}}" class="bg-body-tertiary shadow rounded p-3">
                 @csrf
                 <div class="mb-3">
-                    <label for="loginEmail" class="form-label">Indirizzo email:</label>
+                    <label for="loginEmail" class="form-label">{{ __('ui.email') }}:</label>
                     <input type="email" class="form-control" id="loginEmail" name="email">
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password:</label>
+                    <label for="password" class="form-label">{{ __('ui.password') }}:</label>
                     <input type="password" class="form-control" id="password" name="password">
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-dark">Accedi</button>
+                    <button type="submit" class="btn btn-dark">{{ __('ui.login_title') }}</button>
                 </div>
             </form>
         </div>

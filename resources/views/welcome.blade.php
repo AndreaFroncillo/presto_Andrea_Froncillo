@@ -6,7 +6,7 @@
                     <h1 class="display-4 fw-bolder">Presto.it</h1>
                     <div>
                         @auth
-                        <a href="{{route('create.article')}}" class="btn btn-dark">Pubblica un articolo</a>
+                        <a href="{{route('create.article')}}" class="btn btn-dark">{{ __('ui.publish_article') }}</a>
                         @endauth
                     </div>
                 </div>
@@ -34,7 +34,7 @@
             @empty
             <div class="col-12">
                 <h3 class="text-center">
-                    Non sono ancora stati creati articoli
+                {{ __('ui.no_articles_yet') }}
                 </h3>
             </div>
             @endforelse
