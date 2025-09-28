@@ -13,8 +13,7 @@ use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use Spatie\Image\Enums\CropPosition;
-use Spatie\Image\Manipulations;
+
 
 
 class CreateArticleForm extends Component
