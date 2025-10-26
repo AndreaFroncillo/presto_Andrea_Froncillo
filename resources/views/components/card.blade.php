@@ -5,7 +5,7 @@
         <h6 class="card-subtitle text-body-secondary">{{$article->price}} €</h6>
         <div class="d-flex justify-content-evenly align-items-center mt-5">
             <a href="{{route('article.show', compact('article'))}}" class="btn btn-primary">{{ __('ui.detail') }}</a>
-            <a href="{{route('byCategory', ['category' => $article->category])}}" class="btn btn-outline-info">{{ __('ui.' . $article->category->name) }}</a>
+            <a href="{{route('byCategory', ['category' => $article->category])}}" class="btn btn-outline-info btn-sm mt-2 ms-1">{{ __('ui.' . $article->category->name) }}</a>
         </div>
     </div>
 </div>

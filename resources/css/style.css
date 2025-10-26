@@ -2,14 +2,15 @@
 
 :root{
     --orange: #F5A623;
-    --lb: #2D9CDB;
+    --lb: rgb(42, 76, 115);
     --bg: #F2F2F2;
-    --text: #333333;
+    --text: #000000;
     --accent: #FFC107;
 }
 
 .text-c{
     color: var(--text);
+    margin: 1px, 0px;
 }
 
 .bg-c{
@@ -33,6 +34,10 @@
     width: 100%;
 }
 
+body{
+    background-color: var(--lb);
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
     .bg-custom {
@@ -50,7 +55,17 @@
     }
 }
 
+/* Navbar */
+
+.text-c:hover{
+    color: rgb(247, 247, 247);
+}
+
 /* Footer */
+
+.footer-primary{
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
 .footer-custom{
     background-color: rgba(0, 0, 0, 0.2);
@@ -82,6 +97,8 @@
 
 .card-w{
     width: 18rem;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 /* Livewire component img */

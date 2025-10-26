@@ -107,17 +107,17 @@
                 <form action="{{route('reject', ['article' => $article_to_check])}}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button class="btn btn-danger py-2 px-5 fw-bold">Rifiuta</button>
+                    <button class="btn btn-danger py-2 px-3 fw-bold">Rifiuta</button>
                 </form>
                 <form action="{{route('accept', ['article' => $article_to_check])}}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button class="btn btn-success py-2 px-5 fw-bold">Accetta</button>
+                    <button class="btn btn-success py-2 px-3 fw-bold">Accetta</button>
                 </form>
                 <form action="{{route('undo')}}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button class="btn btn-warning py-2 px-5 fw-bold">Annulla operazione</button>
+                    <button class="btn btn-warning py-2 px-3 fw-bold">Annulla operazione</button>
                 </form>
             </div>
         </div>
